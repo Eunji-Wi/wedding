@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/jquery-sakura.css" />
+    <script
+      type="text/javascript"
+      src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=01x0xog52m"
+    ></script>
     <title>5월 28일, 종현 은지 결혼합니다</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div id="wrapper">
+      <section class="front">
+        <img class="front-img" src="image/1.jpg" />
+        <h1 class="eng front-title">
+          Jonghyun & Eunji's <br />
+          Wedding Day
+        </h1>
+      </section>
+      <section class="intro">
+        <div class="intro-text">
+          <p>
+            캠퍼스에서 서로를 만나<br />
+            함께 한 지 어느새 6년이 지났습니다.<br />
+            결코 짧지 않은 시간을 보냈는데도<br />
+            여전히 함께 다녀보지 못한 곳이 많습니다. <br />
+            서로가 있다면 남은 여생도<br />
+            즐겁게 보낼 수 있겠다는 생각이 들었습니다.<br />
+          </p>
+          <br />
+          <p>
+            저희가 만난 지 2333일 째가 되는<br />
+            2022년 5월 28일,<br />
+            부부의 연을 맺으려 합니다. <br />
+            저희의 새로운 시작을 축복해주시면<br />
+            더없이 감사하겠습니다.<br />
+          </p>
+        </div>
+        <div class="intro-parents">
+          <div class="intro-parents-groom">
+            <span>
+              <span class="bigger-text">김재철•김미혜</span>
+              의 차남
+              <span class="bigger-text">종현</span>
+            </span>
+          </div>
+          <br />
+          <div class="intro-parents-bride">
+            <span>
+              <span class="bigger-text">위성일•송인순</span>
+              의 장녀
+              <span class="bigger-text">은지</span>
+            </span>
+          </div>
+        </div>
+      </section>
+      <section class="photos">
+        <h2 class="eng section-title">Photos</h2>
+      </section>
+      <section class="location">
+        <h2 class="eng section-title">Date & Location</h2>
+        <div class="location-name">2022.5.28. 15:30<br />토브헤세드</div>
+        <!--네이버지도-->
+        <div id="map" style="width: 90%; height: 400px"></div>
+        <script>
+          var position = new naver.maps.LatLng(
+            37.51857962879216,
+            127.03250963786742
+          );
+
+          var map = new naver.maps.Map("map", {
+            center: position,
+            zoom: 17,
+          });
+
+          var markerOptions = {
+            position: position.destinationPoint(0, 20),
+            map: map,
+            icon: {
+              url: "image/heart.png",
+              size: new naver.maps.Size(50, 52),
+              origin: new naver.maps.Point(0, 0),
+              anchor: new naver.maps.Point(25, 26),
+            },
+          };
+
+          var marker = new naver.maps.Marker(markerOptions);
+        </script>
+      </section>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/jquery-sakura.js"></script>
+    <script>
+      $(window).load(function () {
+        $("body").sakura();
+      });
+    </script>
+  </body>
 </html>
